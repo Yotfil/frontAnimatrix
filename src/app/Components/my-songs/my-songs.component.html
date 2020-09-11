@@ -1,0 +1,50 @@
+
+<div class="container containerPrincipal">
+    <div class="row flex-column justify-content-center align-items-center mt-5">
+        <div class=" col-12">
+            <div class="row justify-content-center align-items-center">
+                <!-- <div class="col text-right">
+                    <i class="fas fa-backward icon-player" (click)="changeSong('previous')"></i>
+                </div> -->
+                <div class="col-8">
+                    <video class="video1" style="width: 100%;" src="" controls id="player" data-song=""></video>
+                </div>
+                <!-- <div class="col text-left">
+                    <i class="fas fa-forward icon-player" (click)="changeSong('next')"></i>
+                </div> -->
+            </div>
+        </div>
+        <hr />
+        <div class="informacion">
+            <h4 class="nombreSerie">{{nombreSerie}}</h4>
+            <p class="sinopsisSerie">{{sinopsisSerie}}</p>
+            
+        </div>
+        <hr>
+        <div class="container col-8">
+            <div class="row">
+                
+                <swiper class="carrusel" [config]="config" [(index)]="index">
+                    <div class="carrusel2" *ngFor="let cap of caps">
+                      
+                        <div (click)="changeSong(cap.file, cap.capNumber)" class="cap-container">
+                            {{cap.capNumber}}
+                        </div>
+                    </div>
+                </swiper>
+                <!-- <div class="row">
+                    <div class="col">
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-lg">
+                                <li class="page-item" *ngFor="let page of totalTabs">
+                                    <a class="page-link" (click)="loadSongs(page)">{{page}}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+</div>

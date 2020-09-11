@@ -1,0 +1,190 @@
+<div class="container">
+    <div class="row ">
+        <input aria-label="Search" type="search" placeholder="Buscar serie" class="form-control buscador"
+            (keyup)="getSeries(page)" [(ngModel)]="search">
+
+        <!-- <div class="col-12  col-md-6 col-lg-4 col-xl-3  mb-4 mt-5 columna-mia" *ngFor="let serie of series">
+            <div class="card card-holder carta " style="width: 18rem;">
+                <img src="{{apiURL+'/getSerieFile/'+this.serie.image}}" (click)="guardarIdserieLocal(this.serie._id)"
+                    class="card-img-top imagen-serie" alt="...">
+                <div class="contenedor-botones-texto">
+                    <div class="texto-serie">
+                        <h5 (click)="guardarIdserieLocal(this.serie._id)" class="card-title mb-0">{{serie.name}}
+                        </h5>
+                        <p class="sinopsis">{{serie.sinopsis}}</p>
+                    </div>
+                    <div class="botones-container">
+                        <div class=" d-flex justify-content-around">
+                            <button *ngIf="this.user.role =='ROLE_ADMIN'" routerLink="/registrarCancion" type="button"
+                                class="btn boton-serie mb-3" (click)="guardarIdserieLocal(this.serie._id)">Cargar
+                                capitulo</button>
+                            <button type="button" class="btn boton-serie mb-3" routerLink="/misCanciones"
+                                (click)="guardarIdserieLocal(this.serie._id)">Ver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+    </div>
+    <!-- swiper -->
+
+    <!-- swipper shonnen -->
+    <h3 class="seccion-serie">Shonnen</h3>
+
+
+    <hr>
+    <swiper class="carrusel" [config]="config" [(index)]="indexShonnen">
+        <div class="mb-2 mt-2 columna-mia carruselDirectorio" *ngFor="let serie of seriesShonnen">
+            <div class="card card-holder carta " style="width: 18rem">
+                <img src="{{apiURL+'/getSerieFile/'+this.serie.image}}"
+                    (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)"
+                    class="card-img-top imagen-serie" alt="...">
+                <div class="contenedor-botones-texto">
+                    <div class="flat-icon">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 446.171 446.171"
+                            style="enable-background:new 0 0 446.171 446.171;" xml:space="preserve">
+                            <path (click)="fillHeart($event,this.serie._id)" id="heart-fill" class="heart-transparent"
+                                d="M399.151,81.241c42.841,40.751,42.841,106.057,0,146.808l-20.898,19.853L223.608,394.71
+	L68.963,247.902l-20.898-19.853c-42.841-40.751-42.841-106.057,0-146.808s111.804-40.751,154.645,0l20.898,19.853l20.898-19.853
+	C287.347,40.49,356.31,40.49,399.151,81.241z" />
+                            <path style="fill:#f241a3;" d="M223.608,410.384c-3.657,0-7.837-1.567-10.971-4.18L37.094,239.543
+	C13.584,216.555,0,186.775,0,154.906s13.061-62.171,37.094-84.637c48.588-45.976,127.478-45.976,176.065,0l9.927,9.404l9.927-9.404
+	c48.588-45.976,127.478-45.976,176.065,0l0,0c24.033,22.465,37.094,52.767,37.094,84.637s-13.061,62.171-37.094,84.637
+	L234.58,406.204C231.445,408.816,227.265,410.384,223.608,410.384z M125.388,66.612c-24.033,0-48.065,8.882-66.351,26.122
+	c-17.763,16.718-27.167,38.661-27.167,62.171s9.927,45.453,27.167,62.171L223.608,373.29L388.18,217.078
+	c17.763-16.718,27.167-38.661,27.167-62.171s-9.927-45.453-27.167-62.171l0,0c-36.571-35.004-96.131-35.004-133.225,0
+	l-20.898,19.853c-6.269,5.747-15.673,5.747-21.42,0l-20.898-19.853C173.453,74.971,149.42,66.612,125.388,66.612z" />
+                        </svg>
+                    </div>
+                    <div class="texto-serie">
+                        <h5 (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)"
+                            class="card-title mb-0">{{serie.name}}
+                        </h5>
+                        <p class="sinopsis">{{serie.sinopsis}}</p>
+
+                    </div>
+                    <div class="botones-container">
+                        <div class=" d-flex justify-content-around">
+                            <button *ngIf="this.user.role =='ROLE_ADMIN'" routerLink="/registrarCancion" type="button"
+                                class="btn boton-serie mb-3 col-6"
+                                (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)">Cargar
+                                capitulo</button>
+                            <button type="button" class="btn boton-serie mb-3 " routerLink="/misCanciones"
+                                (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)">Ver
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </swiper>
+    <br><br>
+
+    <!-- swiper thriller -->
+    <h3 class="seccion-serie">Thriller</h3>
+
+
+    <hr>
+    <swiper class="carrusel" [config]="config" [(index)]="indexThriller">
+        <div class="mb-2 mt-2 columna-mia carruselDirectorio" *ngFor="let serie of seriesThriller">
+            <div class="card card-holder carta " style="width: 18rem">
+                <img src="{{apiURL+'/getSerieFile/'+this.serie.image}}"
+                    (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)"
+                    class="card-img-top imagen-serie" alt="...">
+                <div class="contenedor-botones-texto">
+                    <div class="flat-icon">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 446.171 446.171"
+                            style="enable-background:new 0 0 446.171 446.171;" xml:space="preserve">
+                            <path (click)="fillHeart($event)" id="heart-fill" class="heart-transparent" d="M399.151,81.241c42.841,40.751,42.841,106.057,0,146.808l-20.898,19.853L223.608,394.71
+	L68.963,247.902l-20.898-19.853c-42.841-40.751-42.841-106.057,0-146.808s111.804-40.751,154.645,0l20.898,19.853l20.898-19.853
+	C287.347,40.49,356.31,40.49,399.151,81.241z" />
+                            <path style="fill:#f241a3;" d="M223.608,410.384c-3.657,0-7.837-1.567-10.971-4.18L37.094,239.543
+	C13.584,216.555,0,186.775,0,154.906s13.061-62.171,37.094-84.637c48.588-45.976,127.478-45.976,176.065,0l9.927,9.404l9.927-9.404
+	c48.588-45.976,127.478-45.976,176.065,0l0,0c24.033,22.465,37.094,52.767,37.094,84.637s-13.061,62.171-37.094,84.637
+	L234.58,406.204C231.445,408.816,227.265,410.384,223.608,410.384z M125.388,66.612c-24.033,0-48.065,8.882-66.351,26.122
+	c-17.763,16.718-27.167,38.661-27.167,62.171s9.927,45.453,27.167,62.171L223.608,373.29L388.18,217.078
+	c17.763-16.718,27.167-38.661,27.167-62.171s-9.927-45.453-27.167-62.171l0,0c-36.571-35.004-96.131-35.004-133.225,0
+	l-20.898,19.853c-6.269,5.747-15.673,5.747-21.42,0l-20.898-19.853C173.453,74.971,149.42,66.612,125.388,66.612z" />
+                        </svg>
+                    </div>
+                    <div class="texto-serie">
+                        <h5 (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)"
+                            class="card-title mb-0">{{serie.name}}
+                        </h5>
+                        <p class="sinopsis">{{serie.sinopsis}}</p>
+
+                    </div>
+                    <div class="botones-container">
+                        <div class=" d-flex justify-content-around">
+                            <button *ngIf="this.user.role =='ROLE_ADMIN'" routerLink="/registrarCancion" type="button"
+                                class="btn boton-serie mb-3 col-6"
+                                (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)">Cargar
+                                capitulo</button>
+                            <button type="button" class="btn boton-serie mb-3 " routerLink="/misCanciones"
+                                (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)">Ver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </swiper>
+    <!-- swiper romance -->
+    <h3 class="seccion-serie">Romance</h3>
+
+
+    <hr>
+    <swiper class="carrusel" [config]="config" [(index)]="indexRomance">
+        <div class="mb-2 mt-2 columna-mia carruselDirectorio" *ngFor="let serie of seriesRomance">
+            <div class="card card-holder carta " style="width: 18rem">
+                <img src="{{apiURL+'/getSerieFile/'+this.serie.image}}"
+                    (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)"
+                    class="card-img-top imagen-serie" alt="...">
+                <div class="contenedor-botones-texto">
+                    <div class="flat-icon">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 446.171 446.171"
+                            style="enable-background:new 0 0 446.171 446.171;" xml:space="preserve">
+                            <path (click)="fillHeart($event)" id="heart-fill" class="heart-transparent" d="M399.151,81.241c42.841,40.751,42.841,106.057,0,146.808l-20.898,19.853L223.608,394.71
+	L68.963,247.902l-20.898-19.853c-42.841-40.751-42.841-106.057,0-146.808s111.804-40.751,154.645,0l20.898,19.853l20.898-19.853
+	C287.347,40.49,356.31,40.49,399.151,81.241z" />
+                            <path style="fill:#f241a3;" d="M223.608,410.384c-3.657,0-7.837-1.567-10.971-4.18L37.094,239.543
+	C13.584,216.555,0,186.775,0,154.906s13.061-62.171,37.094-84.637c48.588-45.976,127.478-45.976,176.065,0l9.927,9.404l9.927-9.404
+	c48.588-45.976,127.478-45.976,176.065,0l0,0c24.033,22.465,37.094,52.767,37.094,84.637s-13.061,62.171-37.094,84.637
+	L234.58,406.204C231.445,408.816,227.265,410.384,223.608,410.384z M125.388,66.612c-24.033,0-48.065,8.882-66.351,26.122
+	c-17.763,16.718-27.167,38.661-27.167,62.171s9.927,45.453,27.167,62.171L223.608,373.29L388.18,217.078
+	c17.763-16.718,27.167-38.661,27.167-62.171s-9.927-45.453-27.167-62.171l0,0c-36.571-35.004-96.131-35.004-133.225,0
+	l-20.898,19.853c-6.269,5.747-15.673,5.747-21.42,0l-20.898-19.853C173.453,74.971,149.42,66.612,125.388,66.612z" />
+                        </svg>
+                    </div>
+                    <div class="texto-serie">
+                        <h5 (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)"
+                            class="card-title mb-0">{{serie.name}}
+                        </h5>
+                        <p class="sinopsis">{{serie.sinopsis}}</p>
+
+                    </div>
+                    <div class="botones-container">
+                        <div class=" d-flex justify-content-around">
+                            <button *ngIf="this.user.role =='ROLE_ADMIN'" routerLink="/registrarCancion" type="button"
+                                class="btn boton-serie mb-3 col-6"
+                                (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)">Cargar
+                                capitulo</button>
+                            <button type="button" class="btn boton-serie mb-3 " routerLink="/misCanciones"
+                                (click)="guardarIdserieLocal(this.serie._id, this.serie.name, this.serie.sinopsis)">Ver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </swiper>
+</div>
+
+<!--  -->

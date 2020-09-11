@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light navegador ">
+    <a class="navbar-brand col-6 col-lg-3" href="#">
+        <img class="imagenLogo" src="assets/logo.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto " *ngIf="user">
+            <li class="nav-item nav-link-item first ">
+                <a class="nav-link sombra-link" routerLink="/">Home</a>
+            </li>
+
+            <li class="nav-item nav-link-item middle ">
+                <a class="nav-link  sombra-link" *ngIf="this.user.role =='ROLE_ADMIN'" routerLink="/crearSerie">Crear
+                    serie</a>
+            </li>
+            <li class="nav-item nav-link-item middle ">
+                <a class="nav-link sombra-link" routerLink="/directorioSeries">Directorio</a>
+            </li>
+
+            <li class="nav-item nav-link-item middle ">
+                <a class="nav-link sombra-link" routerLink="/favSeries">Favoritos</a>
+            </li>
+            <li class="nav-item nav-link-item last ">
+                <a class="nav-link sombra-link" (click)="destroySession()">Cerrar sesión</a>
+            </li>
+
+        </ul>
+        <div class="d-flex justify-content-center col-3" *ngIf="user">
+            <span routerLink="/actualizarUser" class="form-inline text-white nombre-user"> <i
+                    class="fas fa-user-ninja ninja"></i>
+                Hola {{this.user.firstName}}
+            </span>
+            <img routerLink="/actualizarUser" class="mi-carita" src="{{apiURL+'/get-image-user/'+this.user.image}} "
+                width="50" height="50">
+        </div>
+
+
+    </div>
+</nav>

@@ -1,0 +1,206 @@
+
+.container-btn{
+    height: 100vh;
+}
+
+.btn-big1{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50px;
+background: #313940;
+box-shadow:  20px 20px 60px #2a3036, 
+             -20px -20px 60px #38424a;
+}
+.btn-big1:hover{
+    border-radius: 50px;
+background: #313940;
+box-shadow: inset 20px 20px 60px #2a3036, 
+            inset -20px -20px 60px #38424a;
+}
+.btn-big2{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50px;
+background: #313940;
+box-shadow:  -20px 20px 60px #2a3036, 
+             20px -20px 60px #38424a;
+}
+.btn-big2:hover{
+    border-radius: 50px;
+background: #313940;
+box-shadow: inset -20px 20px 60px #2a3036, 
+            inset 20px -20px 60px #38424a;
+}
+.btn-big2:hover path {
+    fill: #F2137B;
+    transition: fill 0.3s ease-in-out;
+    
+}
+.btn-big1:hover path{
+    fill: #F2137B !important;
+    transition: fill 0.3s ease-in-out;
+
+}
+
+.texto{
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 300 !important;
+    transform: translateY(75%);
+    
+}
+.relativo{
+height: 550px;
+}
+
+/* carrusel */
+/* .margen{
+    margin-top: 0 !important;
+} */
+
+
+.absoluto{
+    padding: 30px !important;
+    background: rgba(0,0,0,0.4) !important;
+    border-radius: 20px !important;
+    width: 40%;
+    margin: auto;
+}
+.absoluto h5, .absoluto p {
+    text-shadow: 0 0 8px black;
+}
+
+
+
+/*09/02/2020*/
+
+.contenedor{ 
+    max-width: 1800px;
+    margin: auto;
+}
+.link-noticias{
+    position: relative;
+    margin-top: 5.5rem;
+    display: flex;
+    justify-content: center;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 0 200px;
+    border-radius: 15px;
+    border: solid rgba(255,255,255,1) 2px;
+    box-shadow: 0px 0px 30px 2px #000000;
+}
+.imgback1{
+    background-image: url('../../../assets/wallpapers/imgback2.jpg');
+
+}
+.imgback2{
+    background-image: url('../../../assets/wallpapers/imgback5.jpg');
+
+}
+.imgback3{
+    background-image: url('../../../assets/wallpapers/imgback3.jpg');
+
+}
+.imgback4{
+    background-image: url('../../../assets/wallpapers/imgback4.jpg');
+
+}
+
+.ribbon-box {
+    /* position: absolute;
+    top: .75rem;
+    right: 0;
+    padding: 0 .75rem;
+    height: 2rem;
+    line-height: 2rem;
+    z-index: 5;
+    font-weight: 600;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    right: 15px; */
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+}
+.ribbon-box::before,
+.ribbon-box::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+.ribbon-box span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 15px 0;
+    background-color: #BF1564;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    color: #fff;
+    font: 700 18px/1 'Lato', sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    text-align: center;
+
+  }
+  .ribbon-top-left {
+    top: -10px;
+    left: -10px;
+  }
+  .ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: 0;
+  right: 0;
+}
+.ribbon-top-left::after {
+    bottom: 0;
+    left: 0;
+  }
+  .ribbon-top-left span {
+    right: -25px;
+    top: 30px;
+    transform: rotate(-45deg);
+  }
+  a.block:hover {
+    color: #495057;
+    opacity: .65;
+    transition: all 0.3s ease-out;
+}
+.subtitle{
+    position: absolute;
+    bottom: 1rem;
+    right: 20px;
+}
+/* .ribbon-warning .ribbon-box { 
+    color: #fff;
+    background-color: #BF1564;
+}
+.ribbon-bottom .ribbon-box {
+    top: auto;
+    bottom: .75rem;
+} */
+.row{
+    margin-left: 0; margin-right: 0;
+}
+

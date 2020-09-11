@@ -1,0 +1,42 @@
+<div class="container d-flex align-items-center justify-content-center">
+    <div class="row col-12 col-sm-8 col-md-8 col-lg-8 col-xl-5 justify-content-center flex-column align-items-center">
+        <h2 class="titulo-login">Nuevo capitulo</h2>
+
+    <form class="formulario" [formGroup]="capForm" (ngSubmit)="registerCap()" enctype="multipart/form-data">
+
+
+        <div class="form-group">
+            <label for="capName"></label>
+            <input id="capName" name="capName" formControlName="capName" type="text" placeholder="Nombre del capitulo" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="capNumber"></label>
+            <input id="capNumber" name="capNumber" formControlName="capNumber" type="number" placeholder="Numero del capitulo" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="duration"></label>
+            <input id="duration" name="duration" formControlName="duration" type="text" placeholder="Duracion" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="file"></label>
+            <input id="file" name="file" formControlName="file" type="file" (change)="prepareCap($event)"
+                class="form-control">
+        </div>
+
+        <div
+            *ngIf="!capForm.get('capName').valid || !capForm.get('duration').valid  || !capForm.get('file').valid || !capForm.get('capNumber').valid">
+            <div class="text-danger">
+                Debes llenar todos los campos
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-info btn-login mt-2"><i
+                class="fas fa-sign-in-alt"></i>Enviar</button>
+        </div>
+
+    </form>
+    </div>
+</div>
