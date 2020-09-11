@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backend_url: 'https://localhost:3000/api',
+  backend_url: 'https://animatrixback.herokuapp.com/api',
 };
 
 /*
