@@ -1,3 +1,5 @@
-export const GLOBAL ={
-   url:'http://localhost:3000/api'  
-} 
+import { environment } from '../../environments/environment';
+
+export const GLOBAL = {
+  url: environment.backend_url,
+};
